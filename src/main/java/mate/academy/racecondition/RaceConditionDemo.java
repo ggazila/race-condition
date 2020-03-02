@@ -6,7 +6,7 @@ import mate.academy.racecondition.threads.ThreadImpl;
 public class RaceConditionDemo {
     public static void main(String[] args) {
         Counter counter = new Counter();
-        ThreadImpl threadImpl = new ThreadImpl(counter);
+        Thread threadImpl = new ThreadImpl(counter);
         Thread runnableImpl = new Thread(new RunnableImpl(counter));
         threadImpl.start();
         runnableImpl.start();

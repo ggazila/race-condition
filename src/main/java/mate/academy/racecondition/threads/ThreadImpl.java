@@ -3,7 +3,8 @@ package mate.academy.racecondition.threads;
 import mate.academy.racecondition.Counter;
 
 public class ThreadImpl extends Thread {
-    Counter counter;
+    private static final int FINAL_CONDITION = 100;
+    private Counter counter;
 
     public ThreadImpl(Counter counter) {
         this.counter = counter;
@@ -11,8 +12,8 @@ public class ThreadImpl extends Thread {
 
     @Override
     public void run() {
-        while (counter.getIterableVariable() < 100) {
-            counter.setIterableVariable(counter.getIterableVariable() + 1);
+        while (counter.getIterableVariable() < FINAL_CONDITION) {
+            counter.increment();
             System.out.println("thread-2: " + counter.getIterableVariable());
         }
     }
